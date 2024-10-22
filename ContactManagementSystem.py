@@ -49,19 +49,18 @@ def main():
             # Adding a contact
             while True:
                 name = input("Please enter the contact's name: ")
-                phone = input("Please enter the contact's phone number (format: ***-***-****): ")
-                email = input("Please enter the contact's email address: ")
-                additional = input("Any additional comments (e.g., address, notes): ")
-
                 if not name or not re.match(r"^[A-Za-z\s]+$", name):
                     print("Invalid name.")
                     continue
+                phone = input("Please enter the contact's phone number (format: ***-***-****): ")
                 if not phone or not re.match(r"\d{3}-\d{3}-\d{4}", phone):
                     print(f"{phone} is invalid. Please use this format: ***-***-****.")
                     continue
+                email = input("Please enter the contact's email address: ")
                 if not email or not re.match(r'[^@]+@[^@]+\.[^@]+', email):
                     print(f"{email} is invalid. Please double-check it.")
                     continue
+                additional = input("Any additional comments (e.g., address, notes): ")
 
                 add_contact(contacts, name, phone, email, additional)
                 print("\nYour new contact has been added to your contacts")
@@ -74,11 +73,13 @@ def main():
                 section = input("Please enter the section to edit (e.g., phone, email, additional): ")
                 section_update = input("Enter the updated info: ")
 
-                if name in contacts and section in contacts[name][section]:
+                if name in contacts:
                     edit_contact(contacts, name, section, section_update)
                     break  # Exit the loop if contact is found and updated
                 else:
-                    input("Contact or section not found. Would you like to try again? (yes,no)")
+                    user_retry = input("Contact or section not found. Would you like to try again? (yes,no)")
+                    if user_retry == 'no':
+                        break
                     
 
         elif user_option == 3:
