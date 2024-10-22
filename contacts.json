@@ -1,0 +1,17 @@
+{
+    "Jane Smith": {
+        "Phone number": "987-654-3210",
+        "Email": "jane.smith@example.com",
+        "Additional Info": "456 Oak St, Springfield"
+    },
+    "Alice Johnson": {
+        "Phone number": "555-123-4567",
+        "Email": "alice.johnson@example.com",
+        "Additional Info": "789 Pine St, Springfield"
+    },
+    "Bob Brown": {
+        "Phone number": "444-777-8888",
+        "Email": "bob.brown@example.com",
+        "Additional Info": "321 Maple St, Springfield"
+    }
+}
