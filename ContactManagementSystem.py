@@ -119,6 +119,7 @@ def main():
             import_from_text(text_file, contacts)
 
         elif user_option == 8:
+            print("Now exiting your contacts. See you next time!")
             break
 
 def get_user_option():
